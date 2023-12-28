@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcServer", "GrpcServer\GrpcServer.csproj", "{357AAB0B-0DCA-4F4B-9172-96BB2876981D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPCClient", "gRPCClient\gRPCClient.csproj", "{92DF3894-E075-4BBA-B576-36A17D4DA579}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gRPCClient", "gRPCClient\gRPCClient.csproj", "{92DF3894-E075-4BBA-B576-36A17D4DA579}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
