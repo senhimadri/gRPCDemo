@@ -40,5 +40,47 @@ public class CustomersService : Customer.CustomerBase
         }
         return Task.FromResult(output);
     }
+
+
+    public override async Task GetNewCustomer(NewCustomerRequest request, 
+                                                IServerStreamWriter<CustomerModel> responseStream, 
+                                                ServerCallContext context)
+    {
+        List<CustomerModel> customers = new List<CustomerModel>()
+        {
+            new CustomerModel
+            {
+                FirstName= "Himadri",
+                LastName = "Sen",
+                EmailAddress="senhimadri@gmail.com",
+                Age=28,
+                IsAlive=true
+            },
+            new CustomerModel
+            {
+                FirstName= "Alamin",
+                LastName = "shek",
+                EmailAddress="alamin@gmail.com",
+                Age=28,
+                IsAlive=true
+            },
+            new CustomerModel
+            {
+                FirstName= "Rakib",
+                LastName = "Sakib",
+                EmailAddress="rakib@gmail.com",
+                Age=28,
+                IsAlive=true
+            }
+        };
+
+
+        foreach (var cust in customers)
+        {
+            await Task.Delay(1000);
+
+            await responseStream.WriteAsync(cust);
+        }
+    }
 }
 

@@ -4,6 +4,12 @@ option csharp_namespace = "GrpcServer";
 
 service Customer{
 	rpc GetCustomerInfo(CustomerLookupModel) returns (CustomerModel);
+
+	rpc GetNewCustomer(NewCustomerRequest) returns(stream CustomerModel);
+}
+
+message NewCustomerRequest {
+
 }
 
 message CustomerLookupModel{
@@ -16,6 +22,4 @@ message CustomerModel{
 	string emailAddress = 3;
 	bool isAlive = 4;
 	int32 age = 5;
-
-
 }
